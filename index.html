@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROJECT-7</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <h1>Photo Gallery</h1>
+    <div class="container">
+       
+<img src="IMAGES/1.jpg" alt="food" class="img">
+<img src="IMAGES/2.jpg" alt="food" class="img">
+<img src="IMAGES/3.jpg" alt="food" class="img">
+<img src="IMAGES/4.jpg" alt="food" class="img">
+<img src="IMAGES/5.jpg" alt="food" class="img">
+<img src="IMAGES/6.jpg" alt="food" class="img">
+
+    </div>
+
+
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
+<!-- 
+
+overflow:hidden;      This line is for remove the scroll bar.
+
+    object-fit:cover;  this line is for Unstretch the Image , When we resize the image the image will stretch so we should Unstretch the image. 
+    object-position:center center;  This Line is performs centered the image , object-position:x y; so we can put double time of center. 
+    grid-template-columns: 200px 200px 200px; This means 3 column with 200px of width(space)  , we can also use short form   grid-template-columns: repeat(3,200px);
+    gap:10px 40px;  gap :  row-gap  column-gap  
+
+
+   ************* JAVASCRIPT  ************
+
+const modal = document.createElement('div');
+modal.id='modal';  
+                here, In this above lines we can create a HTML element div and store it into the variable modal.
+                we can create an ID for modal(div) as modal.
+                
+                document.body.appendChild(modal);
+                                    Here above ,  we can append the modal(div) to the body of document(HTML).
+                                    .container is a direct child to body.
+
+                const images = document.querySelectorAll('.img');
+                                        Here , we can select the all class by using querySelectorAll('.img') function and store it into new variable images.
+                                        
+                images.forEach(image=>{
+
+                 image.addEventListener('click' , ()=>{
+         modal.classList.add('active');
+    })
+                                });   here , we have select the variable images and use forEach to fetch datas one by one and store it into the new variable image.
+                                        Then , we add the event listener to variable image , the event is 'click' , when click image the arrow function will works , In this arrow function we can write logic.
+                                        we add the class to modal(div) that is .active.
+
+modal.addEventListener('click',()=>{
+    modal.classList.remove('active')
+})   here, we can remove the classList of #modal by using classList.remove('active') , so when we click the modal(background) it will remove.
+
+line 10 :         const img = document.createElement('img');  we can create the new tag that is 'img'
+line 11 :         img.src = image.src;   In this line we can store the image source to newly created 'img' tag's source.
+line 12 :           img.ig='img'  , we can create id for new variable 'img' for styling purpose.
+line 16 :           modal.append(img);  , here , In this line performs to load the 'img' in  modal , so we are using modal.append(img) , our main requirement is when we are click the image , it will display large as full screen. so we must load into the modal.
+
+line 13 : while(modal.firstChild){
+ line 14 :          modal.removeChild(modal.firstChild);
+    line 15 :    }  here we can remove the previous image by using the removeChild and (modal.firstChild);
+
+
+
+-->
